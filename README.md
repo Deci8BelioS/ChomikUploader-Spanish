@@ -52,18 +52,6 @@ chomik -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
 chomik -u "/directorio1/directorio2/directorio3" "/home/nick/Documentos/archivo.txt"
 ```
 
-4. Para iniciar sesión en Chomikuj (y subir archivos), utiliza el siguiente comando:
-
-```bash
-chomik -l nombre_chomik -p contraseña -r "/directorio1/directorio2/directorio3" "./"
-```
-
-O simplemente:
-
-```bash
-chomik -l usuario_chomikuj -p contraseña_chomikuj -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
-```
-
 A continuación, se te solicitará que ingreses tu nombre de usuario y contraseña.
 
 ## Añadir el usuario y contraseña o archivos simultaneos en el comando chomik
