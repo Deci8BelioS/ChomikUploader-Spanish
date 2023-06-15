@@ -61,21 +61,28 @@ chomik -l nombre_chomik -p contraseña -r "/directorio1/directorio2/directorio3"
 O simplemente:
 
 ```bash
-chomik -r "/directorio1/directorio2/directorio3" "./"
+chomik -l usuario_chomikuj -p contraseña_chomikuj -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
 ```
 
 A continuación, se te solicitará que ingreses tu nombre de usuario y contraseña.
 
-5. Para enviar varios archivos al mismo tiempo (por ejemplo, 5 archivos simultáneamente), utiliza la opción `-t` seguida del número de archivos que deseas enviar:
+## Añadir el usuario y contraseña o archivos simultaneos en el comando chomik
 
+5. Puedes añadir directamente el usuario y contraseña usando `-l` y `-p`
 ```bash
-chomik -t 5 -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
+chomik -l usuario_chomikuj -p contraseña_chomikuj -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
 ```
 
-6. Si deseas obtener información detallada sobre los errores, utiliza la opción `-d`:
+6. Para enviar varios archivos al mismo tiempo (por ejemplo, 4 archivos simultáneamente), utiliza la opción `-t` seguida del número de archivos que deseas enviar:
 
 ```bash
-chomik -d -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
+chomik -t 4 -l usuario_chomikuj -p contraseña_chomikuj -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
+```
+
+7. Si deseas obtener información detallada sobre los errores, utiliza la opción `-d`:
+
+```bash
+chomik -d -l usuario_chomikuj -p contraseña_chomikuj -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
 ```
 
 ## Notas
