@@ -75,6 +75,6 @@ chomik -d -l usuario_chomikuj -p contraseña_chomikuj -r "/directorio1/directori
 
 ## Notas
 
-- Cuando se envía un directorio (`-r`), el script crea los archivos `subido.txt` y `nosubido.txt`.
+- Cuando se envía un directorio (`-r`), el script crea los archivos `subido.txt` y `nosubido.txt` en el directorio donde estas ejecutando el comando chomik, por lo tanto se recomienda ejecutar el comando en el directorio predeterminado donde iniciemos sesión por SSH dado que si ejecutamos el comando en otro directorio no leera los `.txt` y sin eso no sabe que es lo que ha subido y volverá a subir lo que posiblemente esté ya subido.
 - `subido.txt` contiene la lista de archivos que se han subido exitosamente. Si ya existe un archivo `subido.txt` en el directorio, el programa leerá este archivo para determinar qué archivos ya han sido subidos y los omitirá durante el proceso de carga.
 - `nosubido.txt` contiene la lista de archivos que no se han podido subir debido a errores.
