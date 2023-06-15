@@ -1,4 +1,4 @@
-## Instalación
+# Instalación
 
 Antes de utilizar el script, asegúrate de tener Python 2.7 instalado en tu sistema. Si estás utilizando Ubuntu o Debian, puedes ejecutar los siguientes comandos en tu terminal:
 
@@ -20,7 +20,7 @@ En Windows, no es necesario instalar el script. En su lugar, en el directorio "s
 python main.py
 ```
 
-## Ejemplo de uso
+# Ejemplo de uso
 
 A continuación se presentan algunos ejemplos de cómo utilizar el script:
 
@@ -74,7 +74,7 @@ chomik -t 5 -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
 chomik -d -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
 ```
 
-## Notas
+# Notas
 
 - Cuando se envía un directorio (`-r`), el script crea los archivos `subido.txt` y `nosubido.txt`.
 - `subido.txt` contiene la lista de archivos que se han subido exitosamente. Si ya existe un archivo `subido.txt` en el directorio, el programa leerá este archivo para determinar qué archivos ya han sido subidos y los omitirá durante el proceso de carga.
