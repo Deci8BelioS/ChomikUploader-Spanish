@@ -73,7 +73,7 @@ chomik -t 4 -l usuario_chomikuj -p contraseña_chomikuj -r "/directorio1/directo
 chomik -d -l usuario_chomikuj -p contraseña_chomikuj -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"
 ```
 
-## Ejecutar comando chomik en segundo plano y así poder cerrar la sesión por SSH
+## Ejecutar comando chomik en segundo plano y así poder cerrar la terminal o la sesión por SSH al servidor linux (o raspberry)
 
 ```bash
 sudo nohup chomik -t 2 -l usuario_chomikuj -p contraseña_chomikuj -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos" >/dev/null 2>&1 &
