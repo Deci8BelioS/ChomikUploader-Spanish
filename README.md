@@ -1,6 +1,6 @@
 # Script de Chomik
 
-Este es un script que te permite enviar archivos y directorios a Chomikuj, un servicio de alojamiento de archivos en línea. A continuación, se proporcionan instrucciones para la instalación y ejemplos de uso.
+Este es un script traducido al Español por `DeciBelioS` que te permite enviar archivos y directorios a Chomikuj, un servicio de alojamiento de archivos en línea. A continuación, se proporcionan instrucciones para la instalación y ejemplos de uso.
 
 ## Instalación
 
