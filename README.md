@@ -10,7 +10,7 @@ Antes de utilizar el script, debes asegurarte de tener Python 2.7 instalado en t
 sudo apt update && sudo apt install python2.7 -y
 ```
 
-Una vez que tienes Python 2.7 instalado, puedes proceder a instalar el script. Ejecuta el siguiente comando con privilegios de administrador (debes de estar en el directorio ChomikUploader):
+Una vez que tienes Python 2.7 instalado, puedes proceder a instalar el script. Ejecuta el siguiente comando con privilegios de administrador (debes de estar en el directorio ChomikUploader-Spanish):
 
 ```bash
 sudo python2.7 setup.py install
