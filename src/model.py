@@ -1,12 +1,3 @@
-#!/usr/bin/env python 
-# -*- coding: utf-8 -*- 
-# Author: Adam Grycner (adam_gr [at] gazeta.pl)
-#
-# Written: 12/11/2011
-#
-# Released under: GNU GENERAL PUBLIC LICENSE
-#
-# Ver: 0.4
 import os
 import threading
 import re
@@ -20,8 +11,8 @@ def change_coding(text):
           text = text.encode('utf-8')  
         elif sys.platform.startswith('win'):
           text = text.decode('cp1250').encode('utf-8')
-    except Exception, e:
-        print e
+    except Exception as e:
+        print (e)
     return text
 
 def singleton(cls):
@@ -44,8 +35,8 @@ class Model(object):
         self.lock                  = threading.Lock()
         ##synchronizacja zmiany katalogow w chomiku
         self.chdirs_lock           = threading.Lock()
-        self.notuploaded_file_name = 'notuploaded.txt'
-        self.uploaded_file_name    = 'uploaded.txt'
+        self.notuploaded_file_name = 'nosubido.txt'
+        self.uploaded_file_name    = 'subido.txt'
         self.uploaded              = []
         self.notuploaded           = []
         
@@ -57,8 +48,8 @@ class Model(object):
         f.close()
         #TODO: tu stanowczo jakis test zrobic
         if not os.path.exists(self.notuploaded_file_name):
-        	open(self.notuploaded_file_name,"w").close()
-        f     = open(self.notuploaded_file_name,"r")
+            open(self.notuploaded_file_name,"w").close()
+        f = open(self.notuploaded_file_name,"r")
         files = [ i.strip() for i in f.readlines()]
         f.close()
         self.notuploaded_resume = []
@@ -69,7 +60,7 @@ class Model(object):
             try:
                 filepath, filename, folder_id, chomik_id, token, host, port, stamp = re.findall("([^\t]*)\t([^\t]*)\t([^\t]*)\t([^\t]*)\t([^\t]*)\t([^\t]*)\t([^\t]*)\t([^\t]*)", f)[0]
                 self.notuploaded_resume.append( (filepath, filename, folder_id, chomik_id, token, host, port, stamp) )
-            except IndexError, e:
+            except IndexError as e:
                 self.notuploaded_normal.append( f.strip() )
         
     
@@ -238,6 +229,6 @@ class Model(object):
     
 if __name__ == '__main__':
     m = Model()
-    print m.add_uploaded('./tmp.txt')
-    print m.is_uploaded_or_pended_and_add('./tmp.txt')
-    print m.is_uploaded_or_pended_and_add('./tmp.txt')
+    print (m.add_uploaded('./tmp.txt'))
+    print (m.is_uploaded_or_pended_and_add('./tmp.txt'))
+    print (m.is_uploaded_or_pended_and_add('./tmp.txt'))

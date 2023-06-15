@@ -14,27 +14,27 @@ import getopt
 
 ######################################################################################    
 def usage():
-    print 'Użycie programu:'
-    print 'python', sys.argv[0], '[-h|--help]  [-l|--login nazwa_chomika] [-p|--password haslo chomika] [-r|--recursive katalog_w_chomiku katalog_na_dysku] [-u|--upload katalog_w_chomiku sciezka_do_pliku]\n'
-    print '-h,--help\t\t pokazuje pomoc programu'
-    print '-r,--recursive\t\t wysyla zawartosc katalogu (oraz wszystkich podkatalogow) na chomika do wskazanego katalogu. Na chomiku tworzona jest cala struktura podkatalogow. Przykład:',
-    print 'python', sys.argv[0], '-r "/katalog1/katalog2/katalog3" "/home/nick/Dokumenty"'
-    print '-u,--upload\t\t wysyla plik na chomika do wskazanego katalogu.Przykład:',
-    print 'python', sys.argv[0], '-u "/katalog1/katalog2/katalog3" "/home/nick/Dokumenty/dokument1.txt"'
-    print '-l,--login\t\t login/nazwa_uzytkownika do chomika'
-    print '-p,--password\t\t haslo do chomika. Przyklad:',
-    print 'python', sys.argv[0], '-l nazwa_chomika -p haslo -u "/katalog1/katalog2/katalog3" "/home/nick/Dokumenty/dokument1.txt"'
-    print '-d, --debug\t\t wyswietala wiecej informacji przy okazji bledu programu'
-    print '-t, --threads\t\t liczba watkow (ile plikow jest jednoczescnie wysylanych). Przyklad: ',
-    print 'python', sys.argv[0], '-t 5 -r "/katalog1/katalog2/katalog3" "/home/nick/Dokumenty"'
+    print ('Uso del programa:')
+    print ('python', sys.argv[0], '[-h|--help]  [-l|--login nombre_hamster] [-p|--password contrasena hamster] [-r|--recursive directorio_en_chomikuj directorio_en_disco] [-u|--upload directorio_en_home directorio ruta_al_archivo]')
+    print ('-h, --help\t\t muestra la ayuda del programa')
+    print ('-r, --recursive\t\t envia el contenido del directorio (y todos los subdirectorios) al hamster al directorio especificado. Toda la estructura de subdirectorios se crea en el hamster. Ejemplo:')
+    print ('python', sys.argv[0], '-r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"')
+    print ('-u, --upload\t\t envia el archivo en el hamster al directorio especificado. Ejemplo:')
+    print ('python', sys.argv[0], '-u "/directorio1/directorio2/directorio3" "/home/nick/Documentos/documento1.txt"')
+    print ('-l, --login\t\t nombre de usuario/usuario para el hamster')
+    print ('-p, --password\t\t Contrasena de hamster. Ejemplo:')
+    print ('python', sys.argv[0], '-l nombre_hamster -p contrasena -u "/directorio1/directorio2/directorio3" "/home/nick/Documentos/documento1.txt"')
+    print ('-d, --debug\t\t mostrar mas informacion en caso de error del programa')
+    print ('-t, --threads\t\t numero de hilos (cuantos archivos se cargan simultaneamente). Ejemplo:')
+    print ('python', sys.argv[0], '-t 5 -r "/directorio1/directorio2/directorio3" "/home/nick/Documentos"')
     
 #if __name__ == '__main__':
 if True:
     try:
         opts, args = getopt.getopt(sys.argv[1:], 'hrul:p:dt:', ['help','recursive', 'upload', 'login', 'password','debug', 'threads'])
-    except Exception, e:
-        print 'Przekazano niepoprawny parametr'
-        print e
+    except Exception as e:
+        print ('Se ha pasado un parametro no valido')
+        print (e)
         usage()
         sys.exit(2)
     
@@ -70,6 +70,6 @@ if True:
                 chomik_path, filepath = args
                 u = uploader.Uploader(login, password, debug = debug)
                 u.upload_file(chomik_path, filepath)
-    except ValueError, e:
-        print e
-        print "Blad: Musisz podac zarowno sciezke na chomiku, jak i na dysku. Ktoras z tych sciezek opusciles"
+    except ValueError as e:
+        print (e)
+        print ("Error: Necesita especificar tanto la ruta en el hamster como en el disco. Ha dejado cualquiera de estas rutas")
